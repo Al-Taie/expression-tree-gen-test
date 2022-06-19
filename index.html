@@ -19,6 +19,13 @@
     <div class="inner-width">
         <h1>Expression Tree Generator</h1>
         <div class="inner-input-container" style="text-align: left;">
+            <select name="homeworks" id="homeworks" onchange="document.getElementById('expression-input').value = value">
+                <optgroup label="Homeworks">
+                    <option value="">Select</option>
+                    <option value="3 + (5 + 9) * 2">HW1</option>
+                    <option value="A + B / C ^ (V - M) * 4">HW2</option>
+                </optgroup>
+            </select>
             <span>Current Expression:</span>
             <input class="name" id='expression-input' placeholder="e.g (x + y)*z - (t / w)" type="text">
         </div>
@@ -35,8 +42,9 @@
     <canvas></canvas>
 </div>
 
-<a class="github-link" href="https://github.com/lnogueir/expression-tree-gen">
+<a class="github-link" href="https://github.com/Al-Taie/expression-tree-gen">
     <img src="GitHub_Logo.png" alt="GitHub_Logo"/>
+    <h5>By Ahmed Mones</h5>
 </a>
 
 </body>
@@ -45,5 +53,11 @@
 <script src="tree.js"></script>
 <script src="infixToPostfix.js"></script>
 <script src="canvas.js"></script>
+
+<footer>
+    <div style="text-align: center;">
+        <h5>Developed By Ahmed Mones</h5>
+    </div>
+</footer>
 
 </html>

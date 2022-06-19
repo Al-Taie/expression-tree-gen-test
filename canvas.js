@@ -14,7 +14,7 @@
         c.clearRect(0, 0, canvas.width, canvas.height)
     }
 
-    document.getElementById('generate-tree').addEventListener('click', () => {
+    async function generate() {
         let expression = document.getElementById('expression-input').value;
         if (typeof expression !== 'undefined' && null != expression) {
             expression = expression.replace(/\s+/g, '')
@@ -27,7 +27,7 @@
                     clearCanvas()
                     canvas.height = document.getElementById('canvas-container').offsetHeight;
                     canvas.width = document.getElementById('canvas-container').offsetWidth;
-                    drawTree(root, c)
+                    await drawTree(root, c)
                 } catch (e) {
                     displayErrorMessage()
                 }
@@ -38,7 +38,11 @@
         } else {
             displayErrorMessage()
         }
-    })
+    }
+
+    document.getElementById('homeworks').addEventListener('change', generate)
+
+    document.getElementById('generate-tree').addEventListener('click', generate)
 
     document.getElementById('clear-tree').addEventListener('click', () => {
         document.getElementById('expression-input').value = ''
